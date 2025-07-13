@@ -76,7 +76,8 @@ class CloudFlareTurnstileTask:
 class EzCaptchaImpl(CaptchaInterface):
     def __init__(self) -> None:
         super().__init__()
-        self.client_key = os.environ.get("EZCAPTCHA_CLIENT_KEY", default=None)
+        # self.client_key = os.environ.get("EZCAPTCHA_CLIENT_KEY", default=None)
+        self.client_key = "fd1df5abae10432caa7180869089d144705799"
         if self.client_key == None:
             raise EnvironmentError("缺少环境变量 EZCAPTCHA_CLIENT_KEY")
 

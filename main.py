@@ -4,7 +4,6 @@ from typing import Optional
 from api import User
 from recaptcha import EzCaptchaImpl
 
-# sessions = os.environ.get(key='SESSIONS', default='').split(',')
 session_map_str: Optional[str] = os.environ.get(key='SESSION_MAP', default=None)
 if not session_map_str:
     raise EnvironmentError("缺少环境变量 SESSION_MAP")
@@ -22,5 +21,4 @@ if __name__ == '__main__':
                 'https': http_proxy,
             })
         print('session:',session[:3], '签到结果:', user.checkin().__dict__) 
-        # print(user.get_authenticity_token())
     print("finish checkin")

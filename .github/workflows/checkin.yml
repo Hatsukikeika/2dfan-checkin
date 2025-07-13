@@ -14,6 +14,11 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: 3.10.10
+    - name: Set up Chromium
+      uses: browser-actions/setup-chrome@v1
+      with:
+        chrome-version: 'stable'
+        install-chromedriver: true
     - name: Prepare module
       run: |
         pip3 install -r requirements.txt
