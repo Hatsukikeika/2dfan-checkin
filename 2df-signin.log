@@ -1,0 +1,18 @@
+2025-07-26 19:57:39 [INFO] main.py:68 - 日志系统初始化成功
+2025-07-26 19:57:39 [INFO] main.py:25 - begin checkin
+2025-07-26 19:58:47 [INFO] main.py:37 - session: 474548 签到结果: {'checkins_count': 76, 'serial_checkins': 1}
+2025-07-26 19:58:47 [INFO] main.py:42 - finish checkin
+2025-07-27 15:19:25 [INFO] main.py:74 - 日志系统初始化成功
+2025-07-27 15:19:25 [INFO] main.py:85 - 检查当前时间....
+2025-07-27 15:19:25 [INFO] main.py:31 - begin checkin
+2025-07-27 15:19:25 [INFO] chromium_downloader.py:75 - Starting Chromium download.
+2025-07-27 15:19:38 [INFO] chromium_downloader.py:106 - Beginning extraction
+2025-07-27 15:19:40 [INFO] chromium_downloader.py:133 - Chromium extracted to: C:\Users\AntoMirai\AppData\Local\pyppeteer\pyppeteer\local-chromium\1181217
+2025-07-27 15:49:40 [INFO] main.py:65 - 日志系统初始化成功
+2025-07-27 15:49:56 [INFO] main.py:79 - 加载登入信息成功！
+2025-07-27 15:49:56 [INFO] main.py:98 - 检查当前时间....
+2025-07-27 15:49:56 [INFO] main.py:24 - begin checkin
+2025-07-27 15:51:48 [INFO] main.py:65 - 日志系统初始化成功
+2025-07-27 15:51:54 [INFO] main.py:79 - 加载登入信息成功！
+2025-07-27 15:51:54 [INFO] main.py:98 - 检查当前时间....
+2025-07-27 15:51:54 [INFO] main.py:24 - begin checkin

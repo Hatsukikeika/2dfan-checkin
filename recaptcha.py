@@ -1,6 +1,5 @@
-
-import json
 import os
+import json
 import time
 
 import requests
@@ -78,7 +77,7 @@ class EzCaptchaImpl(CaptchaInterface):
         super().__init__()
         self.client_key = os.environ.get("EZCAPTCHA_CLIENT_KEY", default=None)
         if self.client_key == None:
-            raise EnvironmentError("缺少环境变量 EZCAPTCHA_CLIENT_KEY")
+            raise EnvironmentError("未配置验证API密钥")
 
     def __create_task(
             self,

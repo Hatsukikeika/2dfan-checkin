@@ -1,4 +1,6 @@
 **/__pycache__
 **/*_test.*
+**/build
+**/dist
 .vscode
 .DS_Store

@@ -1,2 +1,4 @@
 requests
+lxml_html_clean
+requests_html
 beautifulsoup4~=4.12.3
