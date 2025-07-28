@@ -21,7 +21,8 @@ http_proxy: str = os.environ.get(key='HTTP_PROXY', default=None)
 signed = False
 
 async def main():
-    logging.info("begin checkin")
+    logging.info("开始签到...")
+    global signed 
     for key in SESSION_MAP[0].keys():
         try:
             session = SESSION_MAP[0][key]
@@ -33,10 +34,10 @@ async def main():
                 })
             result = await user.checkin()
             logging.info(f"session: {key} 签到结果: {result.__dict__}")
+            signed = True
         except Exception as exception:
             logging.error(f"签到失败: {str(exception)}")
-            sys.exit(1)
-    logging.info("finish checkin")
+    logging.info("签到结束")
 
 def logger_setup():
     try:
@@ -97,9 +98,9 @@ if __name__ == '__main__':
 
     while True:
         logging.info("检查当前时间....")
+        logging.info(f"当前时间: {datetime.now().hour} 时 {datetime.now().minute} 分, 已签到: {signed}")
         if signed == False and datetime.now().hour >= 15:
             asyncio.run(main())
-            signed == True
         elif datetime.now().hour < 15:
-            signed == False
+            signed = False
         time.sleep(60 * 60)

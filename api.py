@@ -48,15 +48,18 @@ class User:
         self.captcha_interface = captcha_interface
 
     async def get_authenticity_token(self):
-        resp = await self.session.get(url=f"https://2dfan.com/users/{self.id}/recheckin")
-        await resp.html.arender(wait=30)
+        try:
+            resp = await self.session.get(url=f"https://2dfan.com/users/{self.id}/recheckin")
+            await resp.html.arender(wait=30)
 
-        new_cookie = resp.cookies.get_dict('2dfan.com')
-        for key in new_cookie.keys():
-            self.session.cookies.set(key, new_cookie[key])
-        h5 = BeautifulSoup(resp.text, 'html.parser')
-        token: str = h5.find('input', attrs={'name': 'authenticity_token'}).attrs['value']
-        return token
+            new_cookie = resp.cookies.get_dict('2dfan.com')
+            for key in new_cookie.keys():
+                self.session.cookies.set(key, new_cookie[key])
+            h5 = BeautifulSoup(resp.text, 'html.parser')
+            token: str = h5.find('input', attrs={'name': 'authenticity_token'}).attrs['value']
+            return token
+        finally:
+            await self.session.close()
 
     class CheckinResult:
         checkins_count: int 
